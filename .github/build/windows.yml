@@ -1,0 +1,31 @@
+env:
+  - GO111MODULE=on
+before:
+  hooks:
+#    - go mod tidy
+#after:
+#  hooks:
+#    post: ./upx.sh
+project_name: ksubdomain
+builds:
+  - id: ksubdomain-windows
+    ldflags:
+      - -s -w
+    binary: ksubdomain
+    env:
+      - CGO_ENABLED=1
+#      - CGO_LDFLAGS="-Wl,-static -L/usr/lib/x86_64-linux-gnu/libpcap.a -lpcap -Wl,-Bdynamic"
+#      - CC=x86_64-w64-mingw32-gcc
+#      - CXX=x86_64-w64-mingw32-g++
+    main: main.go
+    goos:
+      - windows
+    goarch:
+      - amd64
+#      - arm64
+
+archives:
+- format: zip
+
+checksum:
+  name_template: "{{ .ProjectName }}-windows-checksums.txt"
