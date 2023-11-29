@@ -18,7 +18,8 @@ jobs:
         run: |
           git submodule update --init --recursive
 #          go mod download
-#          go mod vendor
+          go mod tidy
+          go mod vendor
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
@@ -47,7 +48,8 @@ jobs:
         run: |
           git submodule update --init --recursive
 #          go mod download
-#          go mod vendor
+          go mod tidy
+          go mod vendor
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
@@ -79,7 +81,8 @@ jobs:
         run: |
           git submodule update --init --recursive
 #          go mod download
-#          go mod vendor
+          go mod tidy
+          go mod vendor
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
