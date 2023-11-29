@@ -25,7 +25,7 @@ builds:
 #      - arm64
 
 archives:
-- format: zip
+  - format: zip
 
 checksum:
   name_template: "{{ .ProjectName }}-windows-checksums.txt"
