@@ -1,8 +1,6 @@
 module github.com/hktalent/ksubdomain
 
-go 1.21
-
-toolchain go1.21.4
+go 1.21.4
 
 require (
 	github.com/dgraph-io/badger v1.6.2
