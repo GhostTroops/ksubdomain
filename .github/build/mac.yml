@@ -1,5 +1,6 @@
 env:
   - GO111MODULE=on
+
 project_name: ksubdomain
 builds:
   - id: ksubdomain-darwin
@@ -14,11 +15,15 @@ builds:
     goarch:
       - amd64
 #      - arm64
+#    hooks:
+#      post:
+#        - upx --brute dist/51pwnPlatform-darwin_darwin_amd64_*/51pwnPlatform
+#        - ./.github/upx.sh
 
 archives:
-  - format: zip
-    replacements:
-        darwin: macOS
+- format: zip
+  replacements:
+      darwin: macOS
 
 checksum:
   name_template: "{{ .ProjectName }}-mac-checksums.txt"

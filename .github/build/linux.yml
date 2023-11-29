@@ -1,9 +1,6 @@
 env:
   - GO111MODULE=on
-before:
-  hooks:
-#    - go mod tidy
-#    - .github/workflows/upx.sh
+
 project_name: ksubdomain
 builds:
   - id: ksubdomain-linux
@@ -12,22 +9,16 @@ builds:
     binary: ksubdomain
     env:
       - CGO_ENABLED=1
-#      - CGO_LDFLAGS="-Wl,-static -L/usr/lib/x86_64-linux-gnu/libpcap.a -lpcap -Wl,-Bdynamic"
+      #  0 你再重新编译链接，那么 Go 链接器会使用 Go 版本的实现，这样你将得到一个没有动态链接的纯静态二进制程序
     main: main.go
     goos:
       - linux
     goarch:
       - amd64
-#      - mips
-#      - mips64
-#      - mips64le
-#      - mipsle
-#      - ppc64
-#      - ppc64le
-#      - riscv64
-#      - s390x
-#      - arm
-#      - arm64
+#    hooks:
+#      post:
+#        - upx --brute dist/51pwnPlatform-linux_linux_amd64_*/51pwnPlatform
+#        - ./.github/upx.sh
 archives:
   - format: zip
 
