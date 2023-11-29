@@ -15,7 +15,10 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Checkout submodules
-        run: git submodule update --init --recursive
+        run: |
+          git submodule update --init --recursive
+          go mod tidy
+          go mod vendor
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
@@ -41,7 +44,10 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Checkout submodules
-        run: git submodule update --init --recursive
+        run: |
+          git submodule update --init --recursive
+          go mod tidy
+          go mod vendor
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
@@ -67,7 +73,10 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Checkout submodules
-        run: git submodule update --init --recursive
+        run: |
+          git submodule update --init --recursive
+          go mod tidy
+          go mod vendor
 #      - name: Install upx
 #        run: |
 #          mkdir upx
