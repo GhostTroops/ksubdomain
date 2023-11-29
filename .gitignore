@@ -7,6 +7,7 @@ lists.txt
 *.txt
 ksubdomain.yaml
 ksubdomain
+vendor
 *.json
 *.txt
 superbet.ro.json
