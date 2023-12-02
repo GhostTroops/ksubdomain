@@ -2,13 +2,13 @@ package runner
 
 import (
 	"context"
+	"github.com/GhostTroops/ksubdomain/core/dns"
+	"github.com/GhostTroops/ksubdomain/core/gologger"
+	"github.com/GhostTroops/ksubdomain/core/options"
+	"github.com/GhostTroops/ksubdomain/runner/outputter"
+	"github.com/GhostTroops/ksubdomain/runner/outputter/output"
+	"github.com/GhostTroops/ksubdomain/runner/processbar"
 	util "github.com/hktalent/go-utils"
-	"github.com/hktalent/ksubdomain/core/dns"
-	"github.com/hktalent/ksubdomain/core/gologger"
-	"github.com/hktalent/ksubdomain/core/options"
-	"github.com/hktalent/ksubdomain/runner/outputter"
-	"github.com/hktalent/ksubdomain/runner/outputter/output"
-	"github.com/hktalent/ksubdomain/runner/processbar"
 	"testing"
 )
 

@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/GhostTroops/ksubdomain/cmd/ksubdomain"
 	util "github.com/hktalent/go-utils"
-	"github.com/hktalent/ksubdomain/cmd/ksubdomain"
 	"os"
 	"testing"
 )

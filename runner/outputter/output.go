@@ -1,7 +1,7 @@
 package outputter
 
 import (
-	"github.com/hktalent/ksubdomain/runner/result"
+	"github.com/GhostTroops/ksubdomain/runner/result"
 )
 
 type Output interface {

@@ -2,8 +2,8 @@ package output
 
 import (
 	"bufio"
+	"github.com/GhostTroops/ksubdomain/runner/result"
 	util "github.com/hktalent/go-utils"
-	"github.com/hktalent/ksubdomain/runner/result"
 	"os"
 )
 

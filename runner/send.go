@@ -1,12 +1,12 @@
 package runner
 
 import (
+	"github.com/GhostTroops/ksubdomain/core/device"
+	"github.com/GhostTroops/ksubdomain/core/gologger"
+	"github.com/GhostTroops/ksubdomain/runner/statusdb"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
-	"github.com/hktalent/ksubdomain/core/device"
-	"github.com/hktalent/ksubdomain/core/gologger"
-	"github.com/hktalent/ksubdomain/runner/statusdb"
 	"net"
 	"sync/atomic"
 	"time"

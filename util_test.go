@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/hktalent/ksubdomain/core"
+	"github.com/GhostTroops/ksubdomain/core"
 	"testing"
 )
 

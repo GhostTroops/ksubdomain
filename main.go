@@ -1,8 +1,8 @@
 package main
 
 import (
+	myCmd "github.com/GhostTroops/ksubdomain/cmd/ksubdomain"
 	util "github.com/hktalent/go-utils"
-	myCmd "github.com/hktalent/ksubdomain/cmd/ksubdomain"
 	"net/http"
 	_ "net/http/pprof"
 	"os"

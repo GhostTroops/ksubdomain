@@ -2,7 +2,7 @@ package output
 
 import (
 	"encoding/csv"
-	"github.com/hktalent/ksubdomain/runner/result"
+	"github.com/GhostTroops/ksubdomain/runner/result"
 	"os"
 	"strings"
 )

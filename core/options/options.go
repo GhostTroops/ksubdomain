@@ -2,12 +2,12 @@ package options
 
 import (
 	"fmt"
+	"github.com/GhostTroops/ksubdomain/core"
+	"github.com/GhostTroops/ksubdomain/core/device"
+	"github.com/GhostTroops/ksubdomain/core/gologger"
+	"github.com/GhostTroops/ksubdomain/runner/outputter"
+	"github.com/GhostTroops/ksubdomain/runner/processbar"
 	"github.com/google/gopacket/layers"
-	"github.com/hktalent/ksubdomain/core"
-	"github.com/hktalent/ksubdomain/core/device"
-	"github.com/hktalent/ksubdomain/core/gologger"
-	"github.com/hktalent/ksubdomain/runner/outputter"
-	"github.com/hktalent/ksubdomain/runner/processbar"
 	"strconv"
 	"strings"
 )

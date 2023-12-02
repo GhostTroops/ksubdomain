@@ -2,7 +2,7 @@ package runner
 
 import (
 	"fmt"
-	"github.com/hktalent/ksubdomain/core/gologger"
+	"github.com/GhostTroops/ksubdomain/core/gologger"
 	"math"
 	"sort"
 	"strconv"

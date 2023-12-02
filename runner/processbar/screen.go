@@ -1,6 +1,6 @@
 package processbar
 
-import "github.com/hktalent/ksubdomain/core/gologger"
+import "github.com/GhostTroops/ksubdomain/core/gologger"
 
 type ScreenProcess struct {
 }

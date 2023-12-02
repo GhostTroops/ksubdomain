@@ -1,7 +1,7 @@
 package output
 
 import (
-	"github.com/hktalent/ksubdomain/runner/result"
+	"github.com/GhostTroops/ksubdomain/runner/result"
 	"os"
 	"strings"
 )

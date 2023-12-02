@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/GhostTroops/ksubdomain/runner/result"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
-	"github.com/hktalent/ksubdomain/runner/result"
 	"sync/atomic"
 	"time"
 )

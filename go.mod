@@ -1,4 +1,4 @@
-module github.com/hktalent/ksubdomain
+module github.com/GhostTroops/ksubdomain
 
 go 1.21.4
 
