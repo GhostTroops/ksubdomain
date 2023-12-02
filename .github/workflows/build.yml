@@ -24,7 +24,6 @@ jobs:
       - name: Install Dependences
         run: |
           brew install libpcap
-          go get github.com/GhostTroops/ksubdomain/cmd/ksubdomain@latest
           go mod vendor
 #          git submodule update --init --recursive --remote
       - name: Run GoReleaser
@@ -53,7 +52,6 @@ jobs:
       - name: Install Dependences
         run: |
           sudo apt install -yy libpcap-dev
-          go get github.com/GhostTroops/ksubdomain/cmd/ksubdomain@latest
           go mod vendor
         env:
            GOENABLE: 1
@@ -84,7 +82,6 @@ jobs:
           go-version: 1.21.4
       - name: Install Dependences
         run: |
-          go get github.com/GhostTroops/ksubdomain/cmd/ksubdomain@latest
           go mod vendor
         env:
           GOENABLE: 1
