@@ -16,6 +16,7 @@ func GetUrlInfoWithRm(u, rmHds string) http.Header {
 	PipE.ErrCount = 0
 	PipE.ErrLimit = 10000
 	c1 := PipE.GetClient4Http2()
+	PipE.UseHttp2 = true
 	c1.CheckRedirect = nil
 	PipE.DoGetWithClient4SetHd(c1, u, "GET", nil, func(resp *http.Response, err error, szU string) {
 		if nil == err {

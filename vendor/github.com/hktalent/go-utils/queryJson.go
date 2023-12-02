@@ -4,10 +4,18 @@ import (
 	"fmt"
 	"github.com/itchyny/gojq"
 	"github.com/simonnilsson/ask"
+	"reflect"
 )
+
+func IsPointer(x interface{}) bool {
+	return reflect.TypeOf(x).Kind() == reflect.Ptr
+}
 
 // for github.com/itchyny/gojq
 func GetJQ(source interface{}, path string) interface{} {
+	if IsPointer(source) {
+		source = reflect.ValueOf(source).Elem()
+	}
 	if ps, err := gojq.Parse(path); nil == err {
 		if data := ps.Run(source); nil != data {
 			if o, ok := data.Next(); ok {

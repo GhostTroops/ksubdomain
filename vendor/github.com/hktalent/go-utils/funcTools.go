@@ -4,10 +4,41 @@ import (
 	"log"
 	"runtime"
 	"strings"
+	"sync"
 )
 
 type RegFuncs struct {
 	FuncList []func()
+}
+
+// 并发执行所有func，并等待他们执行完
+func WaitFunc(a ...func()) {
+	var wg sync.WaitGroup
+	WaitFunc4Wg(&wg, a...)
+	wg.Wait()
+}
+
+// 并行执行方法，并将使用 wg 计数器
+func WaitFunc4Wg(wg *sync.WaitGroup, a ...func()) {
+	for _, x := range a {
+		wg.Add(1)
+		go func(cbk func()) {
+			defer wg.Done()
+			cbk()
+		}(x)
+	}
+}
+
+// 并行执行方法，并将使用 wg 计数器
+// 同时传入参数parms
+func WaitFunc4WgParms(wg *sync.WaitGroup, parms []any, a ...func(x ...any)) {
+	for _, x := range a {
+		wg.Add(1)
+		go func(cbk func(...any)) {
+			defer wg.Done()
+			cbk(parms...)
+		}(x)
+	}
 }
 
 // 注册

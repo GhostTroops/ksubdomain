@@ -50,6 +50,7 @@ func init() {
 		"builtins":       argFunc0(nil),
 		"input":          argFunc0(nil),
 		"modulemeta":     argFunc0(nil),
+		"abs":            argFunc0(funcAbs),
 		"length":         argFunc0(funcLength),
 		"utf8bytelength": argFunc0(funcUtf8ByteLength),
 		"keys":           argFunc0(funcKeys),
@@ -272,6 +273,25 @@ func mathFunc3(name string, f func(_, _, _ float64) float64) function {
 		}
 		return f(x, y, z)
 	})
+}
+
+func funcAbs(v any) any {
+	switch v := v.(type) {
+	case int:
+		if v >= 0 {
+			return v
+		}
+		return -v
+	case float64:
+		return math.Abs(v)
+	case *big.Int:
+		if v.Sign() >= 0 {
+			return v
+		}
+		return new(big.Int).Abs(v)
+	default:
+		return &func0TypeError{"abs", v}
+	}
 }
 
 func funcLength(v any) any {
@@ -709,8 +729,12 @@ func funcImplode(v any) any {
 	var sb strings.Builder
 	sb.Grow(len(vs))
 	for _, v := range vs {
-		if r, ok := toInt(v); ok && 0 <= r && r <= utf8.MaxRune {
-			sb.WriteRune(rune(r))
+		if r, ok := toInt(v); ok {
+			if 0 <= r && r <= utf8.MaxRune {
+				sb.WriteRune(rune(r))
+			} else {
+				sb.WriteRune(utf8.RuneError)
+			}
 		} else {
 			return &func0TypeError{"implode", vs}
 		}
@@ -2052,15 +2076,11 @@ func funcError(v any, args []any) any {
 	if len(args) > 0 {
 		v = args[0]
 	}
-	code := 5
-	if v == nil {
-		code = 0
-	}
-	return &exitCodeError{v, code, false}
+	return &exitCodeError{v, 5}
 }
 
 func funcHalt(any) any {
-	return &exitCodeError{nil, 0, true}
+	return &haltError{nil, 0}
 }
 
 func funcHaltError(v any, args []any) any {
@@ -2071,7 +2091,7 @@ func funcHaltError(v any, args []any) any {
 			return &func0TypeError{"halt_error", args[0]}
 		}
 	}
-	return &exitCodeError{v, code, true}
+	return &haltError{v, code}
 }
 
 func toInt(x any) (int, bool) {

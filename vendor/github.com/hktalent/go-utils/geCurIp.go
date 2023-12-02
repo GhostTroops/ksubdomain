@@ -18,6 +18,45 @@ import (
 
 var skpMac = regexp.MustCompile(`docker|lo|utun|gif|stf|awd`)
 
+// 获取本机互联网ip
+func GetActivePlublicIp() (string, string) {
+	var szIp = GetPublicIp()
+	ifc, err := net.Interfaces()
+	if err != nil {
+		fmt.Println(err)
+		return "", ""
+	}
+	for _, i := range ifc {
+		if 0 < len(skpMac.FindAllString(i.Name, -1)) {
+			continue
+		}
+
+		if i.Flags&net.FlagUp == 0 || i.Flags&net.FlagLoopback != 0 {
+			continue
+		}
+
+		addrs, _ := i.Addrs()
+		bHb := false
+		for _, addr := range addrs {
+			if bHb {
+				break
+			}
+			var ip net.IP
+			switch v := addr.(type) {
+			case *net.IPNet:
+				ip = v.IP
+				if ip.IsPrivate() || 20 < len(ip.String()) {
+					continue
+				}
+				if szIp == ip.String() {
+					return szIp, i.Name
+				}
+			}
+		}
+	}
+	return "", ""
+}
+
 // 获取当前 mac 地址 hex 格式，可以作为 51pwn.com 的前缀
 func GetActiveMac() string {
 	ifc, err := net.Interfaces()

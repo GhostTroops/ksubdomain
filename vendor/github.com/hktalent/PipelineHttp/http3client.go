@@ -29,5 +29,6 @@ func (r *PipelineHttp) GetTransport4Http3() http.RoundTripper {
 func (r *PipelineHttp) GetClient4Http3() *http.Client {
 	r.Client = r.GetClient(r.GetTransport4Http3())
 	r.ver = 3
+	r.Client.Transport.(*http.Transport).Proxy = http.ProxyFromEnvironment
 	return r.Client
 }

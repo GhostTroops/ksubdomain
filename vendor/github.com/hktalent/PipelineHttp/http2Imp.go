@@ -32,6 +32,9 @@ func (r *PipelineHttp) GetClient4Http2() *http.Client {
 		r.UseHttp2 = r.Client != nil
 		r.ver = 2
 	}
+	if o, ok := r.Client.Transport.(*http.Transport); ok {
+		o.Proxy = http.ProxyFromEnvironment
+	}
 	return r.Client
 }
 
@@ -113,6 +116,9 @@ func (r *PipelineHttp) GetTransport4http2() http.RoundTripper {
 			//DialTLS: func(netw, addr string, cfg *tls.Config) (net.Conn, error) {
 			//	return net.Dial(netw, addr)
 			//},
+		}
+		if x, ok := tr.(*http.Transport); ok {
+			http2.ConfigureTransport(x)
 		}
 		return tr
 	}
