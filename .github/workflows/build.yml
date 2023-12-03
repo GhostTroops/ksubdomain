@@ -27,10 +27,10 @@ jobs:
           # go mod vendor
 #          git submodule update --init --recursive --remote
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
+        uses: goreleaser/goreleaser-action@v5
         with:
           version: latest
-          args: release -f .github/build/mac.yml --clean -mod=readonly 
+          args: release -f .github/build/mac.yml --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # https://github.com/marketplace/actions/run-on-architecture#supported-platforms
@@ -58,10 +58,10 @@ jobs:
 #           CGO_LDFLAGS: "-Wl,-static -L/usr/lib/x86_64-linux-gnu/libpcap.a -lpcap -Wl,-Bdynamic"
 #          git submodule update --init --recursive --remote
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
+        uses: goreleaser/goreleaser-action@v5
         with:
           version: latest
-          args: release -f .github/build/linux.yml --clean -mod=readonly
+          args: release -f .github/build/linux.yml --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -81,9 +81,9 @@ jobs:
         with:
           go-version: 1.21.4
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
+        uses: goreleaser/goreleaser-action@v5
         with:
           version: latest
-          args: release -f .github/build/windows.yml --clean -mod=readonly 
+          args: release -f .github/build/windows.yml --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
