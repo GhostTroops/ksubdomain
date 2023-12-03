@@ -30,7 +30,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v2
         with:
           version: latest
-          args: release -f .github/build/mac.yml --clean
+          args: release -f .github/build/mac.yml --clean -mod=readonly 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # https://github.com/marketplace/actions/run-on-architecture#supported-platforms
@@ -61,7 +61,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v2
         with:
           version: latest
-          args: release -f .github/build/linux.yml --clean
+          args: release -f .github/build/linux.yml --clean -mod=readonly
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -84,6 +84,6 @@ jobs:
         uses: goreleaser/goreleaser-action@v2
         with:
           version: latest
-          args: release -f .github/build/windows.yml --clean
+          args: release -f .github/build/windows.yml --clean -mod=readonly 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
