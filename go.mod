@@ -26,7 +26,6 @@ require (
 	github.com/benbjohnson/clock v1.3.5 // indirect
 	github.com/c4milo/unpackit v1.0.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
-	github.com/chzyer/readline v1.5.1 // indirect
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
 	github.com/coreos/etcd v3.3.27+incompatible // indirect
 	github.com/corpix/uarand v0.2.0 // indirect
@@ -56,7 +55,6 @@ require (
 	github.com/hktalent/go-update v0.0.0-20230526022740-3a2ce0d34057 // indirect
 	github.com/hktalent/htmlquery v0.0.0-20230303073607-1fbec5a16112 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
-	github.com/ianlancetaylor/demangle v0.0.0-20231023195312-e2daf7ba7156 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
 	github.com/itchyny/gojq v0.12.14 // indirect
 	github.com/itchyny/timefmt-go v0.1.5 // indirect
