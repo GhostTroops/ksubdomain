@@ -23,7 +23,11 @@ func (r *runner) handleResult() {
 		var m1 = map[string]interface{}{"ip": result.Answers, "subdomain": result.Subdomain, "tags": "subdomain"}
 		//KvCc.KvCc.Put(result.Subdomain, []byte("1"))
 
-		go util.PushLog(&m1)
+		func(m09 *map[string]interface{}) {
+			util.WaitFunc4Wg(util.Wg, func() {
+				util.PushLog(&m09)
+			})
+		}(&m1)
 		for _, out := range r.options.Writer {
 			_ = out.WriteDomainResult(result)
 		}
