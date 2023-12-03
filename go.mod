@@ -10,7 +10,7 @@ require (
 	github.com/mattn/go-colorable v0.1.13
 	github.com/miekg/dns v1.1.57
 	github.com/phayes/freeport v0.0.0-20220201140144-74d24b5ae9f5
-	github.com/urfave/cli/v2 v2.25.7
+	github.com/urfave/cli/v2 v2.26.0
 	go.uber.org/ratelimit v0.3.0
 	golang.org/x/crypto v0.16.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -18,12 +18,15 @@ require (
 
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
+	github.com/Masterminds/goutils v1.1.1 // indirect
+	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/andybalholm/brotli v1.0.6 // indirect
 	github.com/antchfx/xpath v1.2.5 // indirect
 	github.com/apex/log v1.9.0 // indirect
 	github.com/benbjohnson/clock v1.3.5 // indirect
 	github.com/c4milo/unpackit v1.0.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/chzyer/readline v1.5.1 // indirect
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
 	github.com/coreos/etcd v3.3.27+incompatible // indirect
 	github.com/corpix/uarand v0.2.0 // indirect
@@ -35,7 +38,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/go-sql-driver/mysql v1.7.1 // indirect
-	github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 // indirect
+	github.com/go-task/slim-sprig v2.20.0+incompatible // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/glog v1.2.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
@@ -52,6 +55,9 @@ require (
 	github.com/hktalent/PipelineHttp v0.0.0-20231202130450-85351540d4bf // indirect
 	github.com/hktalent/go-update v0.0.0-20230526022740-3a2ce0d34057 // indirect
 	github.com/hktalent/htmlquery v0.0.0-20230303073607-1fbec5a16112 // indirect
+	github.com/huandu/xstrings v1.4.0 // indirect
+	github.com/ianlancetaylor/demangle v0.0.0-20231023195312-e2daf7ba7156 // indirect
+	github.com/imdario/mergo v0.3.16 // indirect
 	github.com/itchyny/gojq v0.12.14 // indirect
 	github.com/itchyny/timefmt-go v0.1.5 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
