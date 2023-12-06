@@ -34,8 +34,7 @@
 ```
 go install -v github.com/hktalent/ksubdomain/cmd/ksubdomain@latest
 ```
-
-## Useage
+## Usage
 ```bash
 NAME:
    KSubdomain - 无状态子域名爆破工具
