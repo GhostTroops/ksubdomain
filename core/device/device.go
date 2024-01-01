@@ -66,7 +66,7 @@ func AutoGetDevices() *EtherTable {
 							continue
 						}
 						if dnsLayer := packet.Layer(layers.LayerTypeDNS); dnsLayer != nil {
-							gologger.Printf(".")
+							//gologger.Printf(".")
 							dns, _ := dnsLayer.(*layers.DNS)
 							if !dns.QR {
 								continue

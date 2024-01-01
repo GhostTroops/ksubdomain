@@ -12,14 +12,19 @@ type JsonOutImp struct {
 }
 
 func NewJsonOutImp(filename string, onlyDomain bool) (*JsonOutImp, error) {
-	output, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0664)
-	if err != nil {
-		return nil, err
-	}
 	f := new(JsonOutImp)
-	f.output = output
+	if "" != filename {
+		output, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0664)
+		if err != nil {
+			return nil, err
+		}
+		f.output = output
+	} else {
+		f.output = os.Stdout
+	}
+
 	f.onlyDomain = onlyDomain
-	return f, err
+	return f, nil
 }
 func (f *JsonOutImp) WriteDomainResult(domain result.Result) error {
 	buf := bufio.NewWriter(f.output)
