@@ -6,7 +6,7 @@ import (
 	"compress/gzip"
 	"errors"
 	"fmt"
-	util "github.com/hktalent/go-utils"
+	util "github.com/GhostTroops/go-utils"
 	"golang.org/x/crypto/ssh/terminal"
 	"io"
 	"math/rand"

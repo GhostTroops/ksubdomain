@@ -2,8 +2,8 @@ package main
 
 import (
 	"embed"
+	util "github.com/GhostTroops/go-utils"
 	myCmd "github.com/GhostTroops/ksubdomain/cmd/ksubdomain"
-	util "github.com/hktalent/go-utils"
 	"io"
 	"log"
 	_ "net/http/pprof"
@@ -27,6 +27,9 @@ func main() {
 	os.RemoveAll(".DbCache")
 	defer os.RemoveAll("ksubdomain.yaml")
 	util.Wg = &sync.WaitGroup{}
+	//szHome, _ := os.UserHomeDir()
+	//GoPocPath := szHome + "/.config/"
+	//util.ExtEmbedFiles(&config, "config", GoPocPath)
 	util.DoInit(&config)
 	//go func() {
 	//	http.ListenAndServe("0.0.0.0:6060", nil)

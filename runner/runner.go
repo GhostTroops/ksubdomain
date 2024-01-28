@@ -2,6 +2,7 @@ package runner
 
 import (
 	"context"
+	util "github.com/GhostTroops/go-utils"
 	"github.com/GhostTroops/ksubdomain/core"
 	"github.com/GhostTroops/ksubdomain/core/device"
 	"github.com/GhostTroops/ksubdomain/core/gologger"
@@ -11,7 +12,6 @@ import (
 	"github.com/GhostTroops/ksubdomain/runner/statusdb"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
-	util "github.com/hktalent/go-utils"
 	"github.com/phayes/freeport"
 	"go.uber.org/ratelimit"
 	"log"

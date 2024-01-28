@@ -3,11 +3,11 @@ package device
 import (
 	"context"
 	"fmt"
+	util "github.com/GhostTroops/go-utils"
 	"github.com/GhostTroops/ksubdomain/core/gologger"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
-	util "github.com/hktalent/go-utils"
 	"net"
 	"time"
 )

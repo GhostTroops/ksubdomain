@@ -303,7 +303,7 @@ func (r *leopardFF16) Split(data []byte) ([][]byte, error) {
 			// Copy partial shards
 			copyFrom := data[perShard*fullShards : dataLen]
 			for i := range padding {
-				if len(copyFrom) <= 0 {
+				if len(copyFrom) == 0 {
 					break
 				}
 				copyFrom = copyFrom[copy(padding[i], copyFrom):]
@@ -333,7 +333,10 @@ func (r *leopardFF16) Split(data []byte) ([][]byte, error) {
 }
 
 func (r *leopardFF16) ReconstructSome(shards [][]byte, required []bool) error {
-	return r.ReconstructData(shards)
+	if len(required) == r.totalShards {
+		return r.reconstruct(shards, true)
+	}
+	return r.reconstruct(shards, false)
 }
 
 func (r *leopardFF16) Reconstruct(shards [][]byte) error {

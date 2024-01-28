@@ -1,5 +1,4 @@
 //go:build !amd64 || noasm || appengine || gccgo || nogen
-// +build !amd64 noasm appengine gccgo nogen
 
 package reedsolomon
 
@@ -22,5 +21,13 @@ func galMulSlicesGFNI(matrix []uint64, in, out [][]byte, start, stop int) int {
 }
 
 func galMulSlicesGFNIXor(matrix []uint64, in, out [][]byte, start, stop int) int {
+	panic("codegen not available")
+}
+
+func galMulSlicesAvxGFNI(matrix []uint64, in, out [][]byte, start, stop int) int {
+	panic("codegen not available")
+}
+
+func galMulSlicesAvxGFNIXor(matrix []uint64, in, out [][]byte, start, stop int) int {
 	panic("codegen not available")
 }

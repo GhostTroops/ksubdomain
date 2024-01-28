@@ -1,9 +1,10 @@
-//go:build !noasm && !appengine && !gccgo
-// +build !noasm,!appengine,!gccgo
+//go:build !noasm && !appengine && !gccgo && !nopshufb
 
 // Copyright 2015, Klaus Post, see LICENSE for details.
 
 package reedsolomon
+
+const pshufb = true
 
 //go:noescape
 func galMulSSSE3(low, high, in, out []byte)
@@ -18,19 +19,10 @@ func galMulAVX2Xor(low, high, in, out []byte)
 func galMulAVX2(low, high, in, out []byte)
 
 //go:noescape
-func sSE2XorSlice(in, out []byte)
-
-//go:noescape
 func galMulAVX2Xor_64(low, high, in, out []byte)
 
 //go:noescape
 func galMulAVX2_64(low, high, in, out []byte)
-
-//go:noescape
-func sSE2XorSlice_64(in, out []byte)
-
-//go:noescape
-func avx2XorSlice_64(in, out []byte)
 
 // This is what the assembler routines do in blocks of 16 bytes:
 /*
@@ -233,7 +225,7 @@ func ifftDIT48(work [][]byte, dist int, log_m01, log_m23, log_m02 ffe8, o *optio
 		return
 	}
 
-	if false && o.useGFNI {
+	if false && o.useAvx512GFNI {
 		// Note that these currently require that length is multiple of 64.
 		t01 := gf2p811dMulMatrices[log_m01]
 		t23 := gf2p811dMulMatrices[log_m23]
@@ -388,7 +380,7 @@ func fftDIT48(work [][]byte, dist int, log_m01, log_m23, log_m02 ffe8, o *option
 		return
 	}
 
-	if false && o.useGFNI {
+	if false && o.useAvx512GFNI {
 		t01 := gf2p811dMulMatrices[log_m01]
 		t23 := gf2p811dMulMatrices[log_m23]
 		t02 := gf2p811dMulMatrices[log_m02]

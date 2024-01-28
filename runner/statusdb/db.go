@@ -1,8 +1,8 @@
 package statusdb
 
 import (
+	util "github.com/GhostTroops/go-utils"
 	"github.com/dgraph-io/badger"
-	util "github.com/hktalent/go-utils"
 	"sync/atomic"
 	"time"
 )
