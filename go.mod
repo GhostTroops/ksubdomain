@@ -3,9 +3,9 @@ module github.com/GhostTroops/ksubdomain
 go 1.21.4
 
 require (
+	github.com/GhostTroops/go-utils v0.0.0-20240128101636-18f19360e029
 	github.com/dgraph-io/badger v1.6.2
 	github.com/google/gopacket v1.1.19
-	github.com/hktalent/go-utils v0.0.0-20240115084556-320149f6cfbd
 	github.com/logrusorgru/aurora v2.0.3+incompatible
 	github.com/mattn/go-colorable v0.1.13
 	github.com/miekg/dns v1.1.58
@@ -18,7 +18,6 @@ require (
 
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96 // indirect
-	github.com/GhostTroops/go-utils v0.0.0-20240128101636-18f19360e029 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
@@ -73,7 +72,6 @@ require (
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-sqlite3 v1.14.20 // indirect
-	github.com/mholt/archiver v3.1.1+incompatible // indirect
 	github.com/mholt/archiver/v3 v3.5.1 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -82,7 +80,6 @@ require (
 	github.com/onsi/ginkgo/v2 v2.15.0 // indirect
 	github.com/panjf2000/ants/v2 v2.9.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.1 // indirect
-	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pierrec/lz4/v4 v4.1.21 // indirect
 	github.com/pion/datachannel v1.5.5 // indirect
 	github.com/pion/dtls/v2 v2.2.9 // indirect
@@ -105,7 +102,6 @@ require (
 	github.com/power-devops/perfstat v0.0.0-20221212215047-62379fc7944b // indirect
 	github.com/projectdiscovery/gologger v1.1.12 // indirect
 	github.com/quic-go/qpack v0.4.0 // indirect
-	github.com/quic-go/qtls-go1-20 v0.4.1 // indirect
 	github.com/quic-go/quic-go v0.41.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
