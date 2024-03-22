@@ -3,7 +3,7 @@ module github.com/GhostTroops/ksubdomain
 go 1.21.4
 
 require (
-	github.com/GhostTroops/go-utils v0.0.0-20240128101636-18f19360e029
+	github.com/GhostTroops/go-utils v0.0.0-20240211024251-0918ea3cab6b
 	github.com/dgraph-io/badger v1.6.2
 	github.com/google/gopacket v1.1.19
 	github.com/logrusorgru/aurora v2.0.3+incompatible

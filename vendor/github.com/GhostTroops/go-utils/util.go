@@ -367,13 +367,17 @@ const (
 
 // 读取命令行管道输入
 func ReadStdIn(out chan *string) {
-	if nil != os.Stdin {
-		scanner := bufio.NewScanner(os.Stdin)
+	ReadReader(out, os.Stdin)
+}
+
+func ReadReader(out chan *string, reader io.Reader) {
+	defer close(out)
+	if nil != reader {
+		scanner := bufio.NewScanner(reader)
 		scanner.Buffer(make([]byte, MacLineSize), MacLineSize)
 		for scanner.Scan() {
 			value := strings.TrimSpace(scanner.Text())
 			out <- &value
 		}
-		close(out)
 	}
 }

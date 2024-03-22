@@ -4,6 +4,14 @@ github.com/AndreasBriese/bbloom v0.0.0-20190825152654-46b345b51c96/go.mod h1:bOv
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/GhostTroops/go-utils v0.0.0-20240128101636-18f19360e029 h1:Ao/REH9/qWMmAENwre4xTL4jMWnbnpXqNSCro1Mvqzo=
 github.com/GhostTroops/go-utils v0.0.0-20240128101636-18f19360e029/go.mod h1:0k2sF3QuGKfeW7jVnm+4xg3eTp79eOc+TUii7xt1U4c=
+github.com/GhostTroops/go-utils v0.0.0-20240205073130-1b7f40387986 h1:XdMZON6uF4SZGKZtP6dhDTye0eH83WKzGW+kCBoLtj0=
+github.com/GhostTroops/go-utils v0.0.0-20240205073130-1b7f40387986/go.mod h1:0k2sF3QuGKfeW7jVnm+4xg3eTp79eOc+TUii7xt1U4c=
+github.com/GhostTroops/go-utils v0.0.0-20240205081424-f7c270147f36 h1:HkXEAN5mQ9eyi5rPrGGqNlgSfohiCjad367rUSr1KgI=
+github.com/GhostTroops/go-utils v0.0.0-20240205081424-f7c270147f36/go.mod h1:0k2sF3QuGKfeW7jVnm+4xg3eTp79eOc+TUii7xt1U4c=
+github.com/GhostTroops/go-utils v0.0.0-20240208052250-62cbdc6af503 h1:c0GP5DK/C6OmE0USEmjYx2ooZQJOIWC1Ivi5zxhhrDs=
+github.com/GhostTroops/go-utils v0.0.0-20240208052250-62cbdc6af503/go.mod h1:0k2sF3QuGKfeW7jVnm+4xg3eTp79eOc+TUii7xt1U4c=
+github.com/GhostTroops/go-utils v0.0.0-20240211024251-0918ea3cab6b h1:XbzX85PivP6BziBvVz4TNSfu4y73tIiv8ExGURNNkR0=
+github.com/GhostTroops/go-utils v0.0.0-20240211024251-0918ea3cab6b/go.mod h1:0k2sF3QuGKfeW7jVnm+4xg3eTp79eOc+TUii7xt1U4c=
 github.com/Masterminds/goutils v1.1.1 h1:5nUrii3FMTL5diU80unEVvNevw1nH4+ZV4DSLVJLSYI=
 github.com/Masterminds/goutils v1.1.1/go.mod h1:8cTjp+g8YejhMuvIA5y2vz3BpJxksy863GQaJW2MFNU=
 github.com/Masterminds/semver v1.5.0 h1:H65muMkzWKEuNDnfl9d70GUjFniHKHRbFPGBuZ3QEww=

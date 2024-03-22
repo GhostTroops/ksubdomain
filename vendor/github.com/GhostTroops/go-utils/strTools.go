@@ -32,6 +32,13 @@ func UnicodeEncode(s string) string {
 	return res
 }
 
+func GetReaderData(i io.Reader) []byte {
+	if data, err := io.ReadAll(i); nil == err {
+		return data
+	}
+	return nil
+}
+
 // 字符串全部 url 编码
 func UrlAllEncode(s string) string {
 	var res string
@@ -48,6 +55,13 @@ func Hex2bytes(s string) []byte {
 		return nil
 	}
 	return byteArray
+}
+func Bytes2Hex(s []byte) string {
+	var s1 = ""
+	for _, c := range s {
+		s1 += fmt.Sprintf("\\x%x", c)
+	}
+	return s1
 }
 func Str2Hex(s string) string {
 	var res = ""

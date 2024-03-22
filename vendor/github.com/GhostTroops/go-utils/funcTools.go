@@ -2,6 +2,7 @@ package go_utils
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"log"
 	"os"
@@ -78,6 +79,17 @@ func WaitOneFunc4WgParms[T any](wg *SizedWaitGroup, cbk func(x T), parms ...T) {
 			cbk(p1)
 		}(x)
 	}
+}
+
+func RegFuncWithCtx(ctx context.Context, cancel context.CancelFunc, cbk ...func(context.Context, context.CancelFunc)) {
+	for _, x := range cbk {
+		go x(ctx, cancel)
+	}
+}
+func RegFunc(cbk ...func(context.Context, context.CancelFunc)) (context.Context, context.CancelFunc) {
+	var ctx, cancel = context.WithCancel(context.Background())
+	RegFuncWithCtx(ctx, cancel, cbk...)
+	return ctx, cancel
 }
 
 // 注册
